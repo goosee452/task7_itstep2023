@@ -1,0 +1,23 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+html{
+    font-family: sans-serif;
+}
+
+button{
+    background-color: rgb(14, 106, 192);
+    color: white;
+    border-style: solid;
+    border: 0;
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+button:hover{
+    background-color: rgb(201, 157, 13);
+}

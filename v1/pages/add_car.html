@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/add_car.css">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="brand.." id="brand">
+    <input type="text" placeholder="color.." id="color">
+    <input type="text" placeholder="number.." id="number">
+    <input type="text" placeholder="mass.." id="mass">
+    <input type="text" placeholder="engine type.." id="eng_type">
+    <input type="text" placeholder="date.." id="date">
+    <input type="text" placeholder="fines.." id="fines">
+    <input type="text" placeholder="unpaid fines.." id="unp_fines">
+    <button onclick="add()"> ADD </button>
+    <script>
+        function add(){
+            console.log(1);
+            let car = {
+                brand:document.getElementById('brand').value,
+                color:document.getElementById('color').value,
+                number:document.getElementById('number').value,
+                mass:document.getElementById('mass').value,
+                eng_type:document.getElementById('eng_type').value,
+                date:document.getElementById('date').value,
+                fines:document.getElementById('fines').value,
+                unp_fines:document.getElementById('unp_fines').value
+            }
+
+            fetch('http://localhost:2007/addcar2', {
+                method: 'PUT',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(car)
+            });
+        }
+    </script>
+</body>
+</html>
